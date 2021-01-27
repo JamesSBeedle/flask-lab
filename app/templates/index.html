@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - orders</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+</head>
+<body>
+    <header id="header-id">
+        <h1>My Orders</h1>
+    </header>
+    {% for order in orders%}
+        <div id="orders-container">
+            <p>
+                <a href="http://127.0.0.1:5000/orders/{{loop.index0}}" >
+                    {{ order.customer_name}}: <b>{{order.order_date}}, {{order.quantity}} of {{order.cheese}}</b>
+                </a>
+                
+            
+            </p>
+        </div>
+
+    {%endfor%}
+    <main>
+        <section>
+            
+        </section> 
+    </main>
+</body>
+</html>
